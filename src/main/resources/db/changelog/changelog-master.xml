@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.1.xsd
+    http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd">
+
+    <include file="/db/changelog/changes/1-create-customer-table.sql"/>
+    <include file="/db/changelog/changes/2-insert-default-customers.sql"/>
+    <include file="/db/changelog/changes/3-create-user-table.sql"/>
+    <include file="/db/changelog/changes/4-insert-admin-user.sql"/>
+    <include file="/db/changelog/changes/5-create-role-table.sql"/>
+    <include file="/db/changelog/changes/6-insert-admin-role.sql"/>
+    <include file="/db/changelog/changes/7-create-user-role-table.sql"/>
+    <include file="/db/changelog/changes/8-associate-admin-role-to-admin-user.sql"/>
+</databaseChangeLog>
