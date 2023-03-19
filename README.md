@@ -1,14 +1,14 @@
 # Customers API
 
 ## _What did I use?_
-- Spring boot 2.7.5
+- Spring boot 2.7.5 (With Spring boot everything is too easy!)
 - Java 8
-- Gradle
-- Liquibase 4.3.1
-- MySql 8.0.30
-- Testcontainers 1.17.3
-- Docker 4.15.0
-- Swagger 2
+- Gradle 7.6.1 (to build!)
+- MySql 8.0.30 (We always need to save the data!)
+- Liquibase 4.3.1 (for database versioning!)
+- Testcontainers 1.17.3 (for automated tests!)
+- Docker 4.15.0 (Testcontainers needs this!)
+- Swagger 2 (for documentation!)
 
 
 ## _Important:_
@@ -21,3 +21,11 @@
 
 
 ## _TODO:_
+- Add more table structure in the database.
+- Add more functionality to the security and authentication scheme (for example: assigning and using roles, editing users, refreshing JWT token).
+- API versioning.
+- Upgrade to newer versions of Java and Spring boot
+- Add and improve automated tests, add test to the Controller layer.
+- Improve Exception handling
+- Use more, and in a better way, the Linters tools. Add, in the repository, reviews and code quality assurance.
+- And much more, you can always improve!
