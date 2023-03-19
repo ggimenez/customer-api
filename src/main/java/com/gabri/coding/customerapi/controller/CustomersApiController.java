@@ -38,10 +38,6 @@ public class CustomersApiController {
         return new ResponseEntity<>(customersService.getCustomers(), HttpStatus.OK);
     }
 
-    @GetMapping("/find-by-name")
-    public ResponseEntity<Object> findByName(@RequestParam String name){
-        return new ResponseEntity<>(customersService.findCustomerByName(name), HttpStatus.OK);
-    }
 
     /**
      * Gets a Customer by its ID
@@ -50,8 +46,8 @@ public class CustomersApiController {
      */
     @GetMapping("/{id}")
     public ResponseEntity<Object> getById(@PathVariable int id) {
-        Optional<CustomerDTO> songOptional = customersService.getCustomerById(id);
-        return new ResponseEntity<>(songOptional.get(), HttpStatus.OK);
+        Optional<CustomerDTO> customerDTOOptional = customersService.getCustomerById(id);
+        return new ResponseEntity<>(customerDTOOptional.get(), HttpStatus.OK);
     }
 
     /**
@@ -83,6 +79,11 @@ public class CustomersApiController {
     public ResponseEntity<Object> delete(@PathVariable int id) {
         customersService.deleteCustomer(id);
         return new ResponseEntity<>(HttpStatus.OK);
+    }
+
+    @GetMapping("/find-by-name")
+    public ResponseEntity<Object> findByName(@RequestParam String name){
+        return new ResponseEntity<>(customersService.findCustomerByName(name), HttpStatus.OK);
     }
 
 
