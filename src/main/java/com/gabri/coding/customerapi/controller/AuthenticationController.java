@@ -75,12 +75,12 @@ public class AuthenticationController {
         return new ResponseEntity<>(userCreated, HttpStatus.OK);
     }
 
-    @PutMapping("/auth/user")
+    /*@PutMapping("/auth/user")
     public ResponseEntity<Object> updateUser(@RequestBody UserDTO userDTO, @RequestParam Long id) {
 
         UserDTO userCreated = userService.updateUser(userDTO, id);
         return new ResponseEntity<>(userCreated, HttpStatus.OK);
-    }
+    }*/
 
 
 
