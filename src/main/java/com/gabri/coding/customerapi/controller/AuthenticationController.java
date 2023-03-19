@@ -21,7 +21,7 @@ import java.util.List;
 
 @RequestMapping("/api/")
 @RestController
-public class AuthenticationResource {
+public class AuthenticationController {
 
     // ...
     UserService userService;
@@ -31,10 +31,10 @@ public class AuthenticationResource {
     CustomAuthenticationManager authenticationManager;
 
     @Autowired
-    public AuthenticationResource(JwtUserDetailsService jwtUserDetailsService,
-                                       JwtTokenService jwtTokenService,
-                                       CustomAuthenticationManager authenticationManager,
-                                       UserService userService){
+    public AuthenticationController(JwtUserDetailsService jwtUserDetailsService,
+                                    JwtTokenService jwtTokenService,
+                                    CustomAuthenticationManager authenticationManager,
+                                    UserService userService){
         this.jwtUserDetailsService = jwtUserDetailsService;
         this.jwtTokenService = jwtTokenService;
         this.authenticationManager = authenticationManager;

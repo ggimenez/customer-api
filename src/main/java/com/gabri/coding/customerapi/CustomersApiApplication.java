@@ -17,12 +17,6 @@ public class CustomersApiApplication {
 		SpringApplication.run(CustomersApiApplication.class, args);
 	}
 
-	/*@Bean
-	public Docket customerApiSwagger() {
-		return new Docket(DocumentationType.SWAGGER_2).select()
-				.apis(RequestHandlerSelectors.basePackage("com.gabri.coding.controller")).build();
-	}*/
-
 	@Bean
 	public ModelMapper modelMapper() {
 		return new ModelMapper();

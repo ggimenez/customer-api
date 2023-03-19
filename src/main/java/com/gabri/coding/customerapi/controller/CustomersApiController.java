@@ -2,6 +2,9 @@ package com.gabri.coding.customerapi.controller;
 
 import com.gabri.coding.customerapi.dto.CustomerDTO;
 import com.gabri.coding.customerapi.service.CustomersService;
+import com.gabri.coding.customerapi.service.security.JwtTokenService;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -18,6 +21,7 @@ import java.util.Optional;
 public class CustomersApiController {
 
     CustomersService customersService;
+    Logger logger = LoggerFactory.getLogger(CustomersApiController.class);
 
     @Autowired
     public CustomersApiController(CustomersService customersService){
@@ -47,13 +51,7 @@ public class CustomersApiController {
     @GetMapping("/{id}")
     public ResponseEntity<Object> getById(@PathVariable int id) {
         Optional<CustomerDTO> songOptional = customersService.getCustomerById(id);
-        if(songOptional.isPresent()){
-            return new ResponseEntity<>(songOptional.get(), HttpStatus.OK);
-        }else{
-            throw new ResponseStatusException(
-                    HttpStatus.NOT_FOUND, "entity not found"
-            );
-        }
+        return new ResponseEntity<>(songOptional.get(), HttpStatus.OK);
     }
 
     /**
@@ -82,8 +80,9 @@ public class CustomersApiController {
      * @param id The Customer ID
      */
     @DeleteMapping("/{id}")
-    public void delete(@PathVariable int id) {
+    public ResponseEntity<Object> delete(@PathVariable int id) {
         customersService.deleteCustomer(id);
+        return new ResponseEntity<>(HttpStatus.OK);
     }
 
 
