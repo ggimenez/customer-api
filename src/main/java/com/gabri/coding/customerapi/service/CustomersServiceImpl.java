@@ -40,9 +40,10 @@ public class CustomersServiceImpl implements CustomersService {
         try {
             List<CustomerDTO> customersDTO = new ArrayList<>();
             List<Customer> customersFromDB = customersRepository.findAll();
-            for(Customer oneCustomerFromDB : customersFromDB){
-                customersDTO.add(modelMapper.map(oneCustomerFromDB, CustomerDTO.class));
-            }
+
+            customersDTO = customersFromDB.stream().map(
+                    customerFromDB -> modelMapper.map(customerFromDB, CustomerDTO.class)).
+                    collect(Collectors.toList());
 
             return  customersDTO;
         }catch (Exception e){
