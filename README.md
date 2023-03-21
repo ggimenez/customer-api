@@ -2,7 +2,7 @@
 
 ## _What did I use?_
 - Spring boot 2.7.5 (With Spring boot everything is too easy!)
-- Java 8
+- Java 11
 - Gradle 7.6.1 (to build!)
 - MySql 8.0.30 (We always need to save the data!)
 - Liquibase 4.3.1 (for database versioning!)
